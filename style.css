@@ -5,6 +5,7 @@ body {
 .wrapper {
     margin: auto;
     background-color: rgb(8, 41, 75);
+    height: 100%;
 }
 
 .slider {
@@ -29,10 +30,9 @@ input {
 
 .texts {
     display: flex;
-    align-self: flex-start;
     flex-direction: column;
     color: azure;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .text1, .text2,
@@ -41,6 +41,7 @@ input {
     z-index: -10;
     position: absolute;
     text-align: center;
+    align-self: center;
 }
 
 #btn1:checked ~ .meme1,
@@ -58,7 +59,36 @@ input {
 #btn6:checked ~ .texts > .text6,
 #btn7:checked ~ .texts > .text7 {
     z-index: 1;
-    animation: appearing 1s;
+    animation: appearing 2s;
+}
+
+#btn1:checked ~ .labels > label[for="btn1"] > .circle > .inner-circle,
+#btn2:checked ~ .labels > label[for="btn2"] > .circle > .inner-circle,
+#btn3:checked ~ .labels > label[for="btn3"] > .circle > .inner-circle,
+#btn4:checked ~ .labels > label[for="btn4"] > .circle > .inner-circle,
+#btn5:checked ~ .labels > label[for="btn5"] > .circle > .inner-circle,
+#btn6:checked ~ .labels > label[for="btn6"] > .circle > .inner-circle,
+#btn7:checked ~ .labels > label[for="btn7"] > .circle > .inner-circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10rem;
+    padding: 0.5rem;
+    cursor: default;
+    animation: appearing 3s;
+    transition: 1s;
+}
+
+
+#btn1:checked ~ .labels > label[for="btn1"] > .circle:hover,
+#btn2:checked ~ .labels > label[for="btn2"] > .circle:hover,
+#btn3:checked ~ .labels > label[for="btn3"] > .circle:hover,
+#btn4:checked ~ .labels > label[for="btn4"] > .circle:hover,
+#btn5:checked ~ .labels > label[for="btn5"] > .circle:hover,
+#btn6:checked ~ .labels > label[for="btn6"] > .circle:hover,
+#btn7:checked ~ .labels > label[for="btn7"] > .circle:hover {
+    background-color: initial;
+    cursor: default;
 }
 
 .labels {
@@ -73,33 +103,55 @@ input {
     align-items: center;
     width: 2rem;
     height: 2rem;
+    border: 0.5rem solid rgb(22, 24, 82);
     padding: 0.25rem;
     border-radius: 10rem;
     cursor: pointer;
 }
 
-.inner-circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: rgb(255, 255, 255);
-    border: 0.5rem solid rgb(46, 12, 12);
-    border-radius: 10rem;
-    padding: 0.5rem;
-    cursor: pointer;
-}
-
-img {
-    display: block;
-    /* width: 400px;
-    height: 400px; */
-}
-
-@keyframes fading {
-    from {opacity: 1;}
-    to {opacity: 0;}
+.circle:hover {
+    background-color: rgb(110, 110, 110);
+    transition: 1s;
 }
 
 @keyframes appearing {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 500px) {
+    .labels {
+        flex-direction: column;
+        margin-top: 140vh;
+    }
+
+    .texts {
+        font-size: 0.5rem;
+    }
+
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0.5rem solid rgb(22, 24, 82);
+        padding: 0.25rem;
+        border-radius: 10rem;
+        cursor: pointer;
+    }
+
+    img {
+        max-width: 50%;
+        max-height: 50%;
+    }
+    
+    
+    
+    
 }
