@@ -1,0 +1,54 @@
+.wrapper {
+    margin: auto;
+    background-color: rgb(8, 43, 81);
+}
+
+.slider {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input {
+    
+}
+
+.meme1, .meme2,
+.meme3, .meme4, 
+.meme5, .meme6, .meme7  {
+    margin-top: 10vh;
+    z-index: -10;
+    position: absolute;
+}
+
+#btn1:checked ~.meme1 {
+    z-index: 1;
+}
+
+#btn2:checked ~.meme2 {
+    z-index: 1;
+}
+
+#btn3:checked ~.meme3 {
+    z-index: 1;
+}
+
+.slide {
+    display: flex;
+
+}
+
+/* .circle {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+} */
+
+img {
+    display: block;
+    /* width: 400px;
+    height: 400px; */
+}
