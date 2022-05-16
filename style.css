@@ -1,0 +1,157 @@
+body {
+    margin: 0
+}
+
+.wrapper {
+    margin: auto;
+    background-color: rgb(8, 41, 75);
+    height: 100%;
+}
+
+.slider {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input {
+    display: none;
+}
+
+.meme1, .meme2,
+.meme3, .meme4, 
+.meme5, .meme6, .meme7  {
+    z-index: -10;
+    position: absolute;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    color: azure;
+    font-size: 1.5rem;
+}
+
+.text1, .text2,
+.text3, .text4, 
+.text5, .text6, .text7  {
+    z-index: -10;
+    position: absolute;
+    text-align: center;
+    align-self: center;
+}
+
+#btn1:checked ~ .meme1,
+#btn2:checked ~ .meme2,
+#btn3:checked ~ .meme3,
+#btn4:checked ~ .meme4,
+#btn5:checked ~ .meme5,
+#btn6:checked ~ .meme6,
+#btn7:checked ~ .meme7,
+#btn1:checked ~ .texts > .text1,
+#btn2:checked ~ .texts > .text2,
+#btn3:checked ~ .texts > .text3,
+#btn4:checked ~ .texts > .text4,
+#btn5:checked ~ .texts > .text5,
+#btn6:checked ~ .texts > .text6,
+#btn7:checked ~ .texts > .text7 {
+    z-index: 1;
+    animation: appearing 2s;
+}
+
+#btn1:checked ~ .labels > label[for="btn1"] > .circle > .inner-circle,
+#btn2:checked ~ .labels > label[for="btn2"] > .circle > .inner-circle,
+#btn3:checked ~ .labels > label[for="btn3"] > .circle > .inner-circle,
+#btn4:checked ~ .labels > label[for="btn4"] > .circle > .inner-circle,
+#btn5:checked ~ .labels > label[for="btn5"] > .circle > .inner-circle,
+#btn6:checked ~ .labels > label[for="btn6"] > .circle > .inner-circle,
+#btn7:checked ~ .labels > label[for="btn7"] > .circle > .inner-circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10rem;
+    padding: 0.5rem;
+    cursor: default;
+    animation: appearing 3s;
+    transition: 1s;
+}
+
+
+#btn1:checked ~ .labels > label[for="btn1"] > .circle:hover,
+#btn2:checked ~ .labels > label[for="btn2"] > .circle:hover,
+#btn3:checked ~ .labels > label[for="btn3"] > .circle:hover,
+#btn4:checked ~ .labels > label[for="btn4"] > .circle:hover,
+#btn5:checked ~ .labels > label[for="btn5"] > .circle:hover,
+#btn6:checked ~ .labels > label[for="btn6"] > .circle:hover,
+#btn7:checked ~ .labels > label[for="btn7"] > .circle:hover {
+    background-color: initial;
+    cursor: default;
+}
+
+.labels {
+    display: flex;
+    gap: 1rem;
+    margin-top: 80vh;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0.5rem solid rgb(22, 24, 82);
+    padding: 0.25rem;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+
+.circle:hover {
+    background-color: rgb(110, 110, 110);
+    transition: 1s;
+}
+
+@keyframes appearing {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 500px) {
+    .labels {
+        flex-direction: column;
+        margin-top: 140vh;
+    }
+
+    .texts {
+        font-size: 0.5rem;
+    }
+
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0.5rem solid rgb(22, 24, 82);
+        padding: 0.25rem;
+        border-radius: 10rem;
+        cursor: pointer;
+    }
+
+    img {
+        max-width: 50%;
+        max-height: 50%;
+    }
+    
+    
+    
+    
+}
